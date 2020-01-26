@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import requests
 from lxml import etree
 import numpy as np
+from numpy import *
 infected = 1975    
 suspected_case= 2684
 allI=infected#+suspected_case
@@ -17,25 +18,25 @@ infection_rate = 0.057     # by Imai et al
 
 mortality =  death/allI
 cure_rate=healer/allI
-t=1
+t=1.00
 f = open('C:\\sss\\za\\virus\\2.txt','a')
 f.seek(0)
 f.truncate()
 f.close
 while(t<time):
-    if t<=10:
+    if t<=7:
         k = 5         # the average contact by a person
-    elif t>10:
-        k=1
+    elif t>7:
+        k=(0.9)**t
         
-    allI=allI*k*infection_rate-allI*(mortality+cure_rate)+allI
+    allI=allI*k*infection_rate-allI*k*infection_rate*(mortality+cure_rate)+allI
     deathpeople=allI*mortality
     allI=int(allI)
     f = open('C:\\sss\\za\\virus\\2.txt','a')
 
     f.write(str(t)+' '+str(allI)+'\n')
     f.close
-    t=t+1
+    t=t+1.00
 
 import matplotlib.pyplot as plt
 filename = 'C:\\sss\\za\\virus\\2.txt'
@@ -50,10 +51,11 @@ with open(filename, 'r') as f:#1
 print(X)
 print(Y)
 plt.plot(X, Y)
-# for a, b in zip(X, Y):
-#     plt.text(a, b, b, ha='center', va='bottom', fontsize=5)
+for a, b in zip(X, Y):
+    plt.text(a, b, b, ha='center', va='bottom', fontsize=5)
 
 plt.show()
+print('deathpeople',deathpeople)
 
 
 
