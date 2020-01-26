@@ -51,8 +51,8 @@ with open(filename, 'r') as f:#1
 print(X)
 print(Y)
 plt.plot(X, Y)
-for a, b in zip(X, Y):
-    plt.text(a, b, b, ha='center', va='bottom', fontsize=5)
+# for a, b in zip(X, Y):
+#     plt.text(a, b, b, ha='center', va='bottom', fontsize=5)
 
 plt.show()
 print('deathpeople',deathpeople)
