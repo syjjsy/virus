@@ -36,7 +36,7 @@ while(t<time):
     t=t+1
 
 import matplotlib.pyplot as plt
-filename = 'C:\\sss\\za\\2.txt'
+filename = 'C:\\sss\\za\\virus\\2.txt'
 X,Y = [],[]
 with open(filename, 'r') as f:#1
     lines = f.readlines()#2
