@@ -1,3 +1,5 @@
+# Updated at 2020.1.26
+
 import matplotlib.pyplot as plt
 import requests
 from lxml import etree
