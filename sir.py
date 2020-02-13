@@ -38,7 +38,7 @@ while(t<time):
     f.close
     t=t+1.00
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 filename = 'C:\\sss\\za\\virus\\2.txt'
 X,Y = [],[]
 with open(filename, 'r') as f:#1
